@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-pod
+  labels:
+    app: py-http
+spec:
+  containers:
+    - name: demo-container
+      image: quay.io/acancell-redhat-talks/linuxday_2024_rome/demo-container:latest
+      ports:
+        - containerPort: 8000
