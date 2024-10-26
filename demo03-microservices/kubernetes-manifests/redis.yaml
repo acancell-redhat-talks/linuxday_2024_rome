@@ -53,15 +53,9 @@ spec:
       - name: redis-conf
         configMap:
           name: redis-conf
-  volumeClaimTemplates:
-    - metadata:
-        name: redis-data-claim
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 1Gi
+      - name: redis-data-claim
+        emptyDir:
+          sizeLimit: 500Mi
 ---
 apiVersion: v1
 kind: Service
